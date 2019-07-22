@@ -3,26 +3,44 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using XFormsAppDesignTwo.DTOs;
+using XFormsAppDesignTwo.Extensions;
+using XFormsAppDesignTwo.Models;
 using XFormsAppDesignTwo.Services;
 
 namespace XFormsAppDesignTwo.ViewModels
 {
-    class OtherViewModel
+    class OtherViewModel : BaseViewModel
     {
-        private readonly IHttpRequestService<OtherDTORequest, OtherDTOResponse> _httpRequestService;
+        private readonly IDataStoreService<Item> _dataStoreService;
 
-        public OtherViewModel(IHttpRequestService<OtherDTORequest, OtherDTOResponse> httpRequestService)
+        public OtherViewModel(IDataStoreService<Item> dataStoreService)
         {
-            _httpRequestService = httpRequestService;
+            dataStoreService = _dataStoreService;
+            GetData();
         }
 
-        private async Task RequestData(string id)
+        private async void GetData()
         {
-            OtherDTOResponse response = null;
-            using (var request = new HttpRequestService<OtherDTORequest, OtherDTOResponse>())
+            await GetItems(false);
+        }
+
+        private async Task GetItems(bool refresh)
+        {
+            IsBusy = true;
+            try
             {
-                response = await Task.Run(() => _httpRequestService.MakeRequest(new OtherDTORequest(id)));
+                var items = await _dataStoreService.GetItemsAsync();
+                if (!items.IsNullOrEmpty())
+                {
+                    
+                }
+                else
+                {
+                    
+                }
             }
+            catch { }
+            finally { IsBusy = false; }            
         }
     }
 }

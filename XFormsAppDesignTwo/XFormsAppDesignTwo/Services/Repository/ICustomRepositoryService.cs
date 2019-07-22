@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using XFormsAppDesignTwo.Models;
 
 namespace XFormsAppDesignTwo.Services
 {
-    public interface IHttpRequestService<T, D> : IDisposable
+    interface ICustomRepositoryService : IRepositoryService<Item>
     {
-        Task<D> MakeRequest(T item);
+        Task<bool> CustomMethod();
     }
 }

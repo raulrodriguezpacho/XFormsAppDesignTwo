@@ -3,6 +3,7 @@ using Autofac.Core;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using XFormsAppDesignTwo.Models;
 using XFormsAppDesignTwo.Services;
 using XFormsAppDesignTwo.ViewModels;
 
@@ -36,13 +37,14 @@ namespace XFormsAppDesignTwo.Base
             if (!_mock)
             {
                 builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
-                
+                builder.RegisterType<ItemsDataStoreService>().As<IDataStoreService<Item>>();
                 // more services..
 
             }
             else
             {
                 builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
+                builder.RegisterType<MockItemsDataStoreService>().As<IDataStoreService<Item>>();
                 // more services..
             }
         }

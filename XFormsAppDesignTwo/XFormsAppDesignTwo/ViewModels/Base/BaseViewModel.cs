@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using XFormsAppDesignTwo.Base;
 using XFormsAppDesignTwo.Services;
 
-namespace XFormsAppDesignTwo.ViewModels.Base
+namespace XFormsAppDesignTwo.ViewModels
 {
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         protected readonly INavigationService NavigationService;
 
@@ -34,7 +34,11 @@ namespace XFormsAppDesignTwo.ViewModels.Base
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public ViewModelBase()
+        public virtual void OnLoading() { }
+
+        public virtual void OnUnloading() { }
+
+        public BaseViewModel()
         {
             NavigationService = LocatorBase.Resolve<INavigationService>();
         }
