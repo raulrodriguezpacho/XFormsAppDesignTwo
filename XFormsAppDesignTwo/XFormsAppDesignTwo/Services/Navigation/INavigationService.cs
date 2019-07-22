@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using XFormsAppDesignTwo.ViewModels.Base;
+using XFormsAppDesignTwo.ViewModels;
 
 namespace XFormsAppDesignTwo.Services
 {
@@ -12,6 +12,6 @@ namespace XFormsAppDesignTwo.Services
         Page NavigationPage { get; }
         object NavigationData { get; }
         Task NavigateBackAsync();
-        Task NavigateToAsync<TViewModel>(object parameter = null) where TViewModel : ViewModelBase;
+        Task NavigateToAsync<TViewModel>(object parameter = null) where TViewModel : BaseViewModel;
     }
 }

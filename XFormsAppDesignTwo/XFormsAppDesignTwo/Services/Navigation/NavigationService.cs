@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using XFormsAppDesignTwo.ViewModels.Base;
+using XFormsAppDesignTwo.ViewModels;
 
 namespace XFormsAppDesignTwo.Services
 {
@@ -14,7 +14,7 @@ namespace XFormsAppDesignTwo.Services
         private object _navigationData;
         public object NavigationData => _navigationData;
 
-        public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase
+        public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : BaseViewModel
         {
             _navigationData = parameter;
             return this.NavigationPage.Navigation.PushModalAsync(GetPageFromViewModel(typeof(TViewModel)));
