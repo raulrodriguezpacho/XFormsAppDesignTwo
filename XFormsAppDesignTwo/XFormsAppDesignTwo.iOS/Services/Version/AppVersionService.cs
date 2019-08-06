@@ -9,7 +9,7 @@ using XFormsAppDesignTwo.Services;
 
 namespace XFormsAppDesignTwo.iOS.Services
 {
-    public class AppVersionService : IAppVersionService
+    class AppVersionService : IAppVersionService
     {
         public int GetBuild()
         {

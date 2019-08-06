@@ -20,7 +20,7 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-	<DotfuscatorXamarinCliPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\PreEmptiveSolutions\DotfuscatorCE\dotfuscatorCLI.exe</DotfuscatorXamarinCliPath>
+    <DotfuscatorXamarinCliPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\PreEmptiveSolutions\DotfuscatorCE\dotfuscatorCLI.exe</DotfuscatorXamarinCliPath>
     <DotfuscatorXamarinConfigFileName>DotfuscatorConfig.xml</DotfuscatorXamarinConfigFileName>
     <DotfuscatorXamarinGenerateNewConfigFile>true</DotfuscatorXamarinGenerateNewConfigFile>
   </PropertyGroup>
@@ -43,7 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-	<DotfuscatorXamarinEnabled>true</DotfuscatorXamarinEnabled>
+    <DotfuscatorXamarinEnabled>true</DotfuscatorXamarinEnabled>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -67,6 +67,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Globalization\GlobalizationService.cs" />
     <Compile Include="Services\Version\AppVersionService.cs" />
     <Compile Include="Services\Device\DeviceService.cs" />
     <Compile Include="Services\PlatformModule.cs" />
@@ -108,7 +109,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-	<Content Include="DotfuscatorConfig.xml">
+    <Content Include="DotfuscatorConfig.xml">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

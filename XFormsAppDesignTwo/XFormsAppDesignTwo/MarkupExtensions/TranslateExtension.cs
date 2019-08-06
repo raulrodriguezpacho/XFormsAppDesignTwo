@@ -6,6 +6,7 @@ using System.Resources;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFormsAppDesignTwo.Base;
 using XFormsAppDesignTwo.Services;
 
 namespace XFormsAppDesignTwo.MarkupExtensions
@@ -22,7 +23,7 @@ namespace XFormsAppDesignTwo.MarkupExtensions
         {
             if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
             {
-                ci = DependencyService.Get<IGlobalizationService>().GetCurrentCultureInfo();
+                ci = LocatorBase.Resolve<IGlobalizationService>().GetCurrentCultureInfo();
             }
         }
 
