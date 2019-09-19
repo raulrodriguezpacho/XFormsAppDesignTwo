@@ -17,7 +17,7 @@
         <option>stripoa</option>
         <option>library</option>
         <option>transformxaml</option>
-        <file dir="${configdir}\${InDir}" name="FCNSEMobileApp.Config.dll" />
+        <file dir="${configdir}\${InDir}" name="XFormsAppDesignTwo.Config.dll" />
       </inputassembly>
     </asmlist>
   </input>
